@@ -20,15 +20,21 @@
   "type": "commonjs",
   "main": "src/index.js",
   "scripts": {
+    "build": "postcss style.css -o dist/style.css",
+    "watch": "postcss style.css -o dist/style.css --watch",
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
     "express": "^5.2.1",
-    "express-handlebars": "^9.0.1"
+    "express-handlebars": "^9.0.1",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "morgan": "^1.10.1",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "postcss-cli": "^11.0.1"
   }
 }
