@@ -4,6 +4,10 @@ import { engine } from 'express-handlebars';
 import route from './routes/index.route.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import db from './config/db/index.js';
+
+//connect db
+db.connect();
 
 const app = express();
 const port = 3000;
@@ -30,7 +34,7 @@ app.use(morgan("combined"));
 //template engine
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, 'resource/views'));
+app.set('views', path.join(__dirname, 'resource', 'views'));
 
 
 route(app);

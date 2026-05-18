@@ -3,7 +3,7 @@ import aboutController from '../app/controllers/AboutController.js';
 
 const route = express.Router();
 
-route.use('/detail', aboutController.detail);
-route.use('/', aboutController.index);
+route.get('/detail', aboutController.detail);
+route.get('/', aboutController.index);
 
 export default route;
